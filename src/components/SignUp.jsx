@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-function Login(props) {
+function SignUp(props) {
   const [user, setUser] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/user/login', {
+      const response = await fetch('http://localhost:5000/user/signUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -16,8 +16,7 @@ function Login(props) {
       });
 
       const result = await response.json();
-      localStorage.setItem('loggedInUser', JSON.stringify(result.id));
-      props.setUserId(result.id);
+      console.log(result);
     } catch (error) {
       console.error(error);
     }
@@ -44,10 +43,10 @@ function Login(props) {
           onChange={handleChange}
           placeholder='Password'
         />
-        <button type='submit'>Login</button>
+        <button type='submit'>SignUp</button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
