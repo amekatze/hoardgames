@@ -1,18 +1,65 @@
 .collection {
     display: flex;
     justify-content: center;
-    img {
-        width: 100px;
-    }
 
     .collection-grid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
         width: 90vw;
+
+        input {
+            align-self: center;
+            width: 200px;
+            margin: 20px 0;
+            padding: 8px;
+            font-size: 15px;
+            border-radius: 3px;
+            border: none;
+            background-color: rgb(118, 101, 147);
+        }
+    
+        input::placeholder {
+            color: white;
+        }
     }
 
     .collection-card {
-        border: 1.5px solid rgb(231, 231, 231);
-        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 2px 2px 5px 0.5px rgba(0, 0, 0, 0.133);
+        border-radius: 7px;
         padding: 10px;
         margin: 10px 0;
+
+        .card {
+            display: flex;
+            margin-top: -22px;
+        }
+
+        .del-button{
+            align-self: flex-end;
+            z-index: 2;
+        }
+
+        .info-left {
+            width: 200px;
+            margin-left: 12px;
+        
+            img {
+                width: 120px;
+            }
+        }
+
+        .info-right {
+            margin-top: 15px;
+            margin-left: 60px;
+
+         textarea{
+            height: 90px;
+            width: 200px;
+         }
+        }
     }
 }

@@ -24,9 +24,13 @@ function Search(props) {
           id: game.id,
           name: game.name,
           member_id: props.userId,
-          minplayer: game.min_players,
-          maxplayer: game.max_players,
+          min_player: game.min_players,
+          max_player: game.max_players,
+          min_playtime: game.min_playtime,
+          max_playtime: game.max_playtime,
           image_url: game.thumb_url,
+          year_published: game.year_published,
+          rules_url: game.rules_url,
         }));
 
         setSearchResults(searchResults);
@@ -57,21 +61,39 @@ function Search(props) {
 
   return (
     <div className='search'>
-      <input type='search' onChange={handleSearch} placeholder='search'></input>
-      <h1>Search results for {searchTerm}</h1>
+      <input
+        type='search'
+        onChange={handleSearch}
+        placeholder='Search Games'
+      ></input>
       <ul>
         {searchResults.map((game) => (
           <li key={game.id}>
-            <img src={game.image_url} alt={game.name} />
-            Name: {game.name}, Players: {game.minplayer} - {game.maxplayer}
-            <button
-              id={game.id}
-              onClick={() => {
-                addToCollection(game);
-              }}
-            >
-              Add to Collection
-            </button>
+            <div className='info-left'>
+              <h3>{game.name}</h3>
+              <img src={game.image_url} alt={game.name} />
+            </div>
+
+            <div className='info-right'>
+              <div>
+                <p>
+                  Players: {game.min_player} - {game.max_player}
+                </p>
+                <p>Year: {game.year_published}</p>
+                <p>
+                  Playtime: {game.min_playtime} - {game.max_playtime} min
+                </p>
+                <a href={game.rules_url}>Rules</a>
+              </div>
+              <button
+                id={game.id}
+                onClick={() => {
+                  addToCollection(game);
+                }}
+              >
+                Add to Collection
+              </button>
+            </div>
           </li>
         ))}
       </ul>

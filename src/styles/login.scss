@@ -18,6 +18,12 @@
     button {
       padding: 6px 7px;
       margin-top: 10px;
+      background-color: rgb(42, 31, 71);
+      color: white;
+    }
+
+    button:hover{
+      background-color: rgb(85, 70, 123);
     }
 
     input {
