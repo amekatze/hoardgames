@@ -1,4 +1,4 @@
-import '../styles/nav.sass';
+import '../styles/nav.scss';
 
 function Nav(props) {
   const setView = props.changeView;

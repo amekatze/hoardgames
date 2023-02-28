@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../styles/login.scss';
 
 function Login(props) {
   const [user, setUser] = useState('');
@@ -36,6 +37,7 @@ function Login(props) {
           name='username'
           onChange={handleChange}
           placeholder='Username'
+          required
         />
         <label htmlFor='password'>Password</label>
         <input
@@ -43,8 +45,16 @@ function Login(props) {
           name='password'
           onChange={handleChange}
           placeholder='Password'
+          required
         />
         <button type='submit'>Login</button>
+        <button
+          onClick={() => {
+            props.setLoggedOutView('signUp');
+          }}
+        >
+          SignUp
+        </button>
       </form>
     </div>
   );

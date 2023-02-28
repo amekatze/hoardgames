@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/search.sass';
+import '../styles/search.scss';
 
 function Search(props) {
   const [searchResults, setSearchResults] = useState([]);
