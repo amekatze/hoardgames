@@ -1,0 +1,18 @@
+.collection {
+    display: flex;
+    justify-content: center;
+    img {
+        width: 100px;
+    }
+
+    .collection-grid {
+        width: 90vw;
+    }
+
+    .collection-card {
+        background-color: rgb(231, 231, 231);
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+}
