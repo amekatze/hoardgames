@@ -9,7 +9,7 @@ function Nav(props) {
 
   return (
     <div className='nav'>
-      <p>User {props.userId}</p>
+      <p>User Id: {props.userId}</p>
       <button
         onClick={() => {
           setView('collection');
